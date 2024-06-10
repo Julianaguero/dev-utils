@@ -1,4 +1,3 @@
-const { execFile } = require("child_process");
 const path = require("path");
 
 module.exports = (_, argv) => ({
@@ -6,7 +5,14 @@ module.exports = (_, argv) => ({
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
+    library: {
+      type: 'module'
+    }
   },
+  experiments: {
+    outputModule: true
+  },
+  devtool: 'source-map', 
   module: {
     rules: [
       {

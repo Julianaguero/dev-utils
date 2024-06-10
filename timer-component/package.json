@@ -15,7 +15,10 @@
     "url": "https://github.com/Julianaguero/dev-utils/issues"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
   },
   "scripts": {
     "build": "webpack --mode production",
