@@ -11,7 +11,7 @@ Installation
 
 Install the package via NPM:
 
-`   npm install @jaguero/timer-component   `
+`   npm install @jnguero-utils/timer-component   `
 
 Usage
 -----
@@ -21,8 +21,8 @@ Usage
 To use the components in your project, import them as follows as create customElements with them:
 
 ```js
-    import { TimerComponent } from " @jaguero/timer-component";   
-    import { TimerPlayerComponent } from " @jaguero/timer-component";  
+    import { TimerComponent } from " @jnguero-utils/timer-component";   
+    import { TimerPlayerComponent } from " @jnguero-utils/timer-component";  
     
     windows.customElements.define("timer-player-component", TimerPlayerComponent)
     windows.customElements.define("timer-component", TimerComponent)
