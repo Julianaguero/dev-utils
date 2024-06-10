@@ -1,6 +1,6 @@
 {
   "name": "@jnguero-utils/sound-component",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "\"SoundComponent is a web component based on LitElement that provides a simple interface for playing audio files in a web application.\"",
   "author": "Julian Agüero",
   "license": "ISC",
