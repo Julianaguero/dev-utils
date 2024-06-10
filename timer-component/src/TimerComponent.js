@@ -1,4 +1,5 @@
 import { LitElement, css, html } from "lit";
+import { TimerPartComponent } from "./TimerPartComponent"
 
 export class TimerComponent extends LitElement {
   static properties = {
@@ -22,6 +23,8 @@ export class TimerComponent extends LitElement {
     this.autoreset = false;
     this.interval = null;
     this.isFinished = new CustomEvent("isFinished", { bubbles: true, composed: true });
+    window.customElements.define("timer-part-component", TimerPartComponent);
+
   }
 
   static styles = css`
@@ -138,4 +141,3 @@ export class TimerComponent extends LitElement {
   }
 }
 
-window.customElements.define("timer-component", TimerComponent);

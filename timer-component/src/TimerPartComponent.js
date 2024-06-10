@@ -31,5 +31,3 @@ export class TimerPartComponent extends LitElement {
 
 
 }
-
-customElements.define("timer-part-component", TimerPartComponent);

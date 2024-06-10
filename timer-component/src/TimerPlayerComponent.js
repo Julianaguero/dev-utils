@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 
+
 export class TimerPlayerComponent extends LitElement {
   static properties = {
     playBtn: { type: Boolean, attribute: "play-btn" },
@@ -115,4 +116,3 @@ export class TimerPlayerComponent extends LitElement {
   }
 }
 
-window.customElements.define("timer-player-component", TimerPlayerComponent);
