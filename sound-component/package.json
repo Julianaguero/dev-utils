@@ -1,0 +1,44 @@
+{
+  "name": "@jnguero-utils/sound-component",
+  "version": "1.0.1",
+  "description": "\"SoundComponent is a web component based on LitElement that provides a simple interface for playing audio files in a web application.\"",
+  "author": "Julian Agüero",
+  "license": "ISC",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julianaguero/dev-utils.git#main"
+  },
+  "homepage": "https://github.com/Julianaguero/dev-utils/tree/main/sound-component#readme",
+  "bugs": {
+    "url": "https://github.com/Julianaguero/dev-utils/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "publish:npm": "npm publish --access public"
+  },
+  "eslintConfig": {
+    "extends": "node_modules/standard/eslintrc.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^9.1.3",
+    "i": "^0.3.7",
+    "lit": "^3.1.4",
+    "npm": "^10.8.1",
+    "standard": "^17.1.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
