@@ -11,7 +11,7 @@ Installation
 
 Install the package via NPM:
 
-`   npm install @jaguero/timer-component   `
+`   npm install @jnguero-utils/timer-component   `
 
 Usage
 -----
