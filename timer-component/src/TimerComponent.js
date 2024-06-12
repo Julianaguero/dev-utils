@@ -24,7 +24,11 @@ export class TimerComponent extends LitElement {
     this.interval = null;
     this.isFinished = new CustomEvent("isFinished", { bubbles: true, composed: true });
     window.customElements.define("timer-part-component", TimerPartComponent);
+  }
 
+  attributeChangedCallback(name, oldval, newval) {
+    super.attributeChangedCallback(name, oldval, newval);
+    this.resetTimer();
   }
 
   static styles = css`
@@ -59,7 +63,6 @@ export class TimerComponent extends LitElement {
   }
 
   startTimer() {
-    // this._setTimer();
     if(!this.interval) {
       this.interval = setInterval(() => {
         if (this.reverse && this.reverse === true) {
@@ -122,11 +125,11 @@ export class TimerComponent extends LitElement {
       value="${this._days}"
       format="DD"></timer-part-component>
       <span class="timer-component-join">:</span>` : "" }
-      <timer-part-component
+      ${this._hours > 0 ? html`<timer-part-component
         value="${this._hours}"
         format="HH"
       ></timer-part-component>
-      <span class="timer-component-join">:</span>
+      <span class="timer-component-join">:</span>` : ""}
       <timer-part-component
         value="${this._minutes}"
         format="MM"

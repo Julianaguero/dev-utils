@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit";
 
-
 export class TimerPlayerComponent extends LitElement {
   static properties = {
     playBtn: { type: Boolean, attribute: "play-btn" },
@@ -36,16 +35,18 @@ export class TimerPlayerComponent extends LitElement {
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-family: var(--timer-component-font-family);
     }
 
-    div.timer-player-component__action {
+    .timer-player-component__action {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 1em;
       margin: var(--timer-player-component-action-margin);
     }
 
-    div.timer-player-component__status {
+    .timer-player-component__status {
       margin: var(--timer-player-component-status-margin);
       color: var(--timer-player-component-status-color);
       font-size: var(--timer-player-component-status-font-size);
@@ -68,6 +69,16 @@ export class TimerPlayerComponent extends LitElement {
       color: var(--timer-player-component-play-color);
       background-color: var(--timer-player-component-play-background-color);
     }
+
+    @media (max-width: 455px) {
+      .timer-player-component__action {
+        gap: 0.1em;
+      }
+      
+      button { 
+        padding: 5px 25px;
+      }
+    }
   `;
 
   _handleIsFinished(e) {
@@ -78,7 +89,9 @@ export class TimerPlayerComponent extends LitElement {
   }
 
   _buttonElement(action, message, className) {
-    return html`<button @click="${action}" class=${className}>${message}</button>`;
+    return html`<button @click="${action}" class=${className}>
+      ${message}
+    </button>`;
   }
 
   _startTimer() {
@@ -105,14 +118,33 @@ export class TimerPlayerComponent extends LitElement {
 
   render() {
     return html`
-      <div class="timer-player-component__status"><span>${this.isFinished ? this.isFinishedMessage : ""}</span></div>
+      <div class="timer-player-component__status">
+        <span>${this.isFinished ? this.isFinishedMessage : ""}</span>
+      </div>
       <slot></slot>
       <div class="timer-player-component__action">
-        ${this.pauseBtn ? this._buttonElement(this._pauseTimer, "Pause", "timer-player-component") : ""}
-        ${this.playBtn ? this._buttonElement(this._startTimer, "Play", "timer-player-component__play") : ""}
-        ${this.pauseBtn ? this._buttonElement(this._resetTimer, "Reset", "timer-player-component") : ""}
+        ${this.pauseBtn
+          ? this._buttonElement(
+              this._pauseTimer,
+              "Pause",
+              "timer-player-component"
+            )
+          : ""}
+        ${this.playBtn
+          ? this._buttonElement(
+              this._startTimer,
+              "Play",
+              "timer-player-component__play"
+            )
+          : ""}
+        ${this.pauseBtn
+          ? this._buttonElement(
+              this._resetTimer,
+              "Reset",
+              "timer-player-component"
+            )
+          : ""}
       </div>
     `;
   }
 }
-
