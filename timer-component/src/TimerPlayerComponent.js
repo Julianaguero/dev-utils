@@ -58,16 +58,28 @@ export class TimerPlayerComponent extends LitElement {
       margin: var(--timer-player-component-button-margin);
       border-radius: var(--timer-player-component-button-border-radius);
       border: var(--timer-player-component-button-border);
+      font-size: var(--timer-player-component-button-font-size);
+      font-weight: var(--timer-player-component-button-font-weight);
     }
 
     button.timer-player-component {
       color: var(--timer-player-component-color);
       background-color: var(--timer-player-component-part-color);
+      transition: all 100ms ease-in;
+    }
+
+    button.timer-player-component:hover {
+      color: #59335c;
     }
 
     button.timer-player-component__play {
       color: var(--timer-player-component-play-color);
       background-color: var(--timer-player-component-play-background-color);
+      transition: all 100ms ease-in;
+    }
+
+     button.timer-player-component__play:hover {
+      background-color: #7c5e35;
     }
 
     @media (max-width: 455px) {
@@ -82,7 +94,7 @@ export class TimerPlayerComponent extends LitElement {
   `;
 
   _handleIsFinished(e) {
-    e.stopPropagation();
+    // e.stopPropagation();
     this.isFinished = true;
     this.soundPlayer.play();
     this.requestUpdate();
@@ -137,7 +149,7 @@ export class TimerPlayerComponent extends LitElement {
               "timer-player-component__play"
             )
           : ""}
-        ${this.pauseBtn
+        ${this.resetBtn
           ? this._buttonElement(
               this._resetTimer,
               "Reset",

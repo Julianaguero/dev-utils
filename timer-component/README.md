@@ -125,6 +125,7 @@ Each component can be customized using CSS variables for better integration with
 
 - **\--timer-component-part-color**: Color of the timer parts.
 - **\--timer-component-join-padding**: Padding between the timer parts.
+- **\--timer-component-join-font-size**: Font size between the timer parts.
 
 ### TimerPlayerComponent Styles
 
@@ -136,6 +137,8 @@ Each component can be customized using CSS variables for better integration with
 - **\--timer-player-component-button-margin**: Margin for action buttons.
 - **\--timer-player-component-button-border-radius**: Border radius for action buttons.
 - **\--timer-player-component-button-border**: Border style for action buttons.
+- **\--timer-player-component-button-font-size**: Font size style for action buttons.
+- **\--timer-player-component-font-weight**: Font weight for action buttons.
 - **\--timer-player-component-color**: Text color for action buttons.
 - **\--timer-player-component-part-color**: Background color for action buttons.
 - **\--timer-player-component-play-color**: Text color for the play button.
@@ -145,8 +148,11 @@ Each component can be customized using CSS variables for better integration with
 
 - **\--timer-component-part-color**: Text color for timer parts.
 - **\--timer-component-part-padding**: Padding for timer parts.
+- **\--timer-component-part-height**: Height for timer parts.
+- **\--timer-component-part-witdh**: Width for timer parts.
 - **\--timer-component-part-box-shadow**: Box shadow for timer parts.
 - **\--timer-component-part-border-radius**: Border radius for timer parts.
+- **\--timer-component-part-font-size**: Font size for timer parts.
 
 ## Events
 

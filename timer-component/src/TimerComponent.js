@@ -23,6 +23,9 @@ export class TimerComponent extends LitElement {
     this.autoreset = false;
     this.interval = null;
     this.isFinished = new CustomEvent("isFinished", { bubbles: true, composed: true });
+    this.pauseEvent = new CustomEvent("pauseEvent", { bubbles: true, composed: true });
+    this.playEvent = new CustomEvent("playEvent", { bubbles: true, composed: true });
+    this.resetEvent = new CustomEvent("resetEvent", { bubbles: true, composed: true });
     window.customElements.define("timer-part-component", TimerPartComponent);
   }
 
@@ -35,11 +38,13 @@ export class TimerComponent extends LitElement {
     :host {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .timer-component-join {
       color: var(--timer-component-part-color);
       padding: var(--timer-component-join-padding);
+      font-size: var(--timer-component-join-font-size);
     }
   `;
 
@@ -82,7 +87,8 @@ export class TimerComponent extends LitElement {
           }
         }
       }, 1000);
-    }
+    };
+    this.dispatchEvent(this.playEvent)
   }
 
   resetTimer() {
@@ -94,10 +100,13 @@ export class TimerComponent extends LitElement {
     this._setTimer();
     this._clearInterval(this.interval);
     if(this.autostart) return this.startTimer();
+    this.dispatchEvent(this.resetEvent);
+
   }
 
   pauseTimer() {
     this._clearInterval();
+    this.dispatchEvent(this.pauseEvent);
   }
 
   _clearInterval() {

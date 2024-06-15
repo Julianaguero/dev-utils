@@ -1,6 +1,6 @@
 {
   "name": "@jnguero-utils/timer-component",
-  "version": "1.1.0",
+  "version": "1.0.2",
   "description": "\"TimerComponent is a customizable web component package that provides a countdown timer with play, pause, and reset functionalities. This package includes four main web components: TimerComponent, TimerPlayerComponent, TimerPartComponent, and the newly added SetTimerComponent.\"",
   "author": "Julian Agüero",
   "license": "ISC",
